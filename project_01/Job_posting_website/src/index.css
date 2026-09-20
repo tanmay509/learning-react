@@ -1,0 +1,311 @@
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #fff;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  --accent: #aa3bff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+  --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #16171d;
+    --border: #2e303a;
+    --code-bg: #1f2028;
+    --accent: #c084fc;
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-border: rgba(192, 132, 252, 0.5);
+    --social-bg: rgba(47, 48, 58, 0.5);
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+
+  #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+}
+
+body {
+  margin: 0;
+  
+}
+
+
+
+
+
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    
+}
+
+
+/* =========================
+   CARD CONTAINER
+========================= */
+
+.cards-container {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+    padding: 30px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+    background-color: #fff;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+
+    padding: 24px;
+    height: 250px;
+
+    /*
+        Card will normally be around 300px,
+        but can shrink when necessary.
+    */
+    flex: 1 1 300px;
+
+    /*
+        Prevents cards from becoming ridiculously wide.
+    */
+    max-width: 350px;
+
+    min-width: 280px;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 18px;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   COMPANY LOGO
+========================= */
+
+.company-logo {
+    width: 64px;
+    height: 64px;
+
+    border-radius: 10px;
+
+    object-fit: contain;
+
+    background: #f3f3f3;
+
+    border: 1px solid #e0e0e0;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   JOB DETAILS
+========================= */
+
+.job-details {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+}
+
+
+/* =========================
+   JOB TITLE
+========================= */
+
+.job-post {
+    font-size: 1.2rem;
+    font-weight: 700;
+
+    margin-bottom: 6px;
+
+    color: #222;
+
+    /*
+        Prevents long titles from
+        breaking the card layout.
+    */
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================
+   JOB META
+========================= */
+
+.job-meta {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    font-size: 1rem;
+
+    color: #525252;
+}
+
+
+/* =========================
+   LOCATION
+========================= */
+
+.job-location {
+    font-size: 0.95rem;
+
+    color: #8b8b8b;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .cards-container {
+        padding: 20px;
+        gap: 16px;
+    }
+
+    .card {
+        /*
+            Two cards can comfortably fit
+            on most tablets.
+        */
+        flex: 1 1 300px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .cards-container {
+        padding: 15px;
+        gap: 15px;
+
+        /*
+            Stack cards vertically.
+        */
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .card {
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+
+        padding: 18px;
+
+        gap: 14px;
+    }
+
+    .company-logo {
+        width: 55px;
+        height: 55px;
+    }
+
+    .job-post {
+        font-size: 1.05rem;
+    }
+
+    .job-meta {
+        font-size: 0.9rem;
+        gap: 6px;
+    }
+
+    .job-location {
+        font-size: 0.85rem;
+    }
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
+
+    .cards-container {
+        padding: 10px;
+    }
+
+    .card {
+        padding: 14px;
+
+        gap: 10px;
+    }
+
+    .company-logo {
+        width: 48px;
+        height: 48px;
+    }
+
+    .job-post {
+        font-size: 1rem;
+    }
+
+    .job-meta {
+        font-size: 0.85rem;
+    }
+}
