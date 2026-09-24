@@ -1,33 +1,29 @@
-import { MoveRight } from "lucide-react"
+import RightCardContent from "./rightcardcontent"
 
-export default function RightCards(props) {
+export default function RightCards() {
+  const professionals = [
+    { img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&auto=format&fit=crop", no: 1, des: "Confident CEO leading startups with bold, strategic vision." },
+    { img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&auto=format&fit=crop", no: 2, des: "Creative marketing director crafting campaigns that inspire audiences." },
+    { img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&auto=format&fit=crop", no: 3, des: "Senior software engineer building scalable, reliable cloud applications." },
+    { img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&auto=format&fit=crop", no: 4, des: "Financial analyst turning complex market data into smart decisions." },
+    { img: "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=800&auto=format&fit=crop", no: 5, des: "Product designer shaping intuitive, human-centered digital experiences." },
+    { img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop", no: 6, des: "Corporate lawyer defending clients with sharp, meticulous expertise." },
+    { img: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=800&auto=format&fit=crop", no: 7, des: "Healthcare consultant improving patient outcomes through smart systems." },
+    { img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&auto=format&fit=crop", no: 8, des: "Business strategist guiding companies toward sustainable, profitable growth." },
+    { img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&auto=format&fit=crop", no: 9, des: "HR manager building diverse, motivated, and high-performing teams." },
+    { img: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=800&auto=format&fit=crop", no: 10, des: "Data scientist unlocking insights from complex, large-scale datasets." }
+  ]
+
   return (
-    <div className="h-full w-50 overflow-hidden relative rounded-4xl">
-      <img
-        className="h-full w-full object-cover"
-        src="https://plus.unsplash.com/premium_photo-1661769159995-f3af0089875f?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt="pic1"
-      />
-      <div className="absolute top-0 left-0 h-full w-full p-5 flex flex-col justify-between">
-        <h2 className="bg-white rounded-full h-10 w-10 flex justify-center items-center">
-          1
-        </h2>
-
-        <div>
-          {/* paragraph on its own line */}
-          <p className="mb-4">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, quasi!
-          </p>
-
-          {/* only button + arrow in the row, pushed to opposite ends */}
-          <div className="flex items-center justify-between">
-            <button>Satisfyied</button>
-            <button className="flex items-center justify-center  p-2 mr-16">
-              <MoveRight className="size-10" />
-            </button>
-          </div>
-        </div>
-      </div>
+    <div className="flex gap-5 overflow-x-auto p-4">
+      {professionals.map((elem) => (
+        <RightCardContent
+          key={elem.no}
+          img={elem.img}
+          no={elem.no}
+          des={elem.des}
+        />
+      ))}
     </div>
   )
 }
