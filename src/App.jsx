@@ -15,15 +15,18 @@ export function App() {
   </div> }*/
   
 let [a,setA]=useState(10);
-function Counter(){
+function increaseNum(){
   setA(a++);
+}
+function decreaseNum(){
+  setA(a--);
 }
 
 
-
-  return <div>
-     <button onClick={Counter} className='h-10 w-10 bg-gray-400 '>click here</button>
-     <h1>The value is {a}</h1>
+  return <div className='bg-gray-900 text-white h-screen w-full '>
+     <h1 className=' h-fit text-9xl'>The value is {a}</h1>
+     <button onClick={increaseNum} className='h-40 w-40 bg-gray-400 mt-40 ml-50 text-2xl rounded-full'>Increase</button>
+     <button onClick={decreaseNum} className='h-40 w-40 bg-gray-400 mt-40 ml-50 text-2xl rounded-full'>Decrease</button>
   </div>
 
 
