@@ -1,0 +1,203 @@
+/* ---------- Global reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ---------- Tokens ---------- */
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #fff;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  --accent: #aa3bff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+  --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  /* unitless line-height — inherits as a factor, not a fixed px */
+  font: 18px/1.5 var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* flat @media — Vite's default PostCSS won't transpile nested @media */
+@media (max-width: 1024px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #16171d;
+    --border: #2e303a;
+    --code-bg: #1f2028;
+    --accent: #c084fc;
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-border: rgba(192, 132, 252, 0.5);
+    --social-bg: rgba(47, 48, 58, 0.5);
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+
+  #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+}
+
+/* ---------- Page shell ---------- */
+body {
+  margin: 0;
+}
+
+#root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  /* overflow-x: clip prevents the horizontal "slider" */
+  overflow-x: clip;
+}
+
+/* every direct child can shrink below its content width */
+#root > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* ---------- Headings ---------- */
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+  /* allow long words / inline-flex children to wrap */
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  line-height: 1.15;   /* was 150% → 84px/line, way too tall */
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 1.2;    /* was 118% — unitless now */
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+}
+
+@media (max-width: 1024px) {
+  h2 {
+    font-size: 20px;
+  }
+}
+
+/* ---------- Paragraphs ---------- */
+p {
+  margin: 0 0 0.5em;
+  line-height: 1.5;
+}
+
+/* was `pb` — not an HTML element, so it matched nothing */
+/* (kept as a class in case your JSX uses className="pb") */
+.pb {
+  height: fit-content;
+  width: fit-content;
+  max-width: 100%;
+  line-height: 1.5;
+}
+
+/* ---------- Code ---------- */
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+  max-width: 100%;
+}
+
+code {
+  font-size: 15px;
+  line-height: 1.35;   /* was 135% */
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+
+/* code inside headings must be able to wrap — inline-flex won't */
+h1 code,
+h2 code {
+  display: inline;
+  white-space: normal;
+  overflow-wrap: break-word;
+  vertical-align: baseline;
+}
+
+/* ---------- Buttons ---------- */
+button {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: rgb(133, 145, 141);
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;      /* don't squash in flex rows */
+}
+
+#hh {
+  height: 50px;
+  width: 50px;
+  border-radius: 10%;
+  background-color: rgb(133, 145, 141);
+  margin-right: 100px;
+  flex-shrink: 0;
+}
+
+/* ---------- Layout helpers ---------- */
+#pa {
+  display: flex;
+  flex-wrap: wrap;     /* wrap instead of overflow */
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+}
+
+#pa > * {
+  min-width: 0;        /* let flex children shrink and wrap */
+}
+
+label {
+  font-size: 30px;
+  color: brown;
+}
+
+/* optional niceties */
+img {
+  max-width: 100%;
+  display: block;
+}
