@@ -311,3 +311,16 @@ Save the file. If the text appears **large, bold, blue, and underlined**, Tailwi
 | Vite integration | Via PostCSS | Via `@tailwindcss/vite` plugin |
 | CSS entry | `@tailwind base; @tailwind components; @tailwind utilities;` | `@import "tailwindcss";` |
 | Content paths | Must be listed in `tailwind.config.js` | Auto-detected |
+---
+
+# What are Localstorage and Sessionstorage in browser?
+## Answer
+Local storage is the primery storage of a browser which stores some data related to the user or the work they were doing on our website, Seeeion storage is simmilar to local storage in most ways but it's got deleted when user close the browesr where the local storage does not got deleted after cloasing the browser.
+
+There are 4 main methods related to local storage:-
+```css
+    localStorage.setItem()// To set the value of any key
+    localStorage.getItem()//To get any value of any key
+    localStorage.remove()// To remove any key,value
+    localStorage.clear()//To clear everything
+```
