@@ -1,4 +1,5 @@
 /* ---------- Global reset ---------- */
+@import "tailwindcss";
 *,
 *::before,
 *::after {
