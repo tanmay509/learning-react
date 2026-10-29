@@ -324,3 +324,92 @@ There are 4 main methods related to local storage:-
     localStorage.remove()// To remove any key,value
     localStorage.clear()//To clear everything
 ```
+
+# What is react router and how to use it?
+## Answer
+React router is a library for routing in react applications. It allows you to navigate between different pages in your application without reloading the page.
+
+There are 3 main components of react router:-
+1. BrowserRouter
+2. Routes
+3. Route
+
+# How to use react router?
+## Answer
+1. Install react router: `npm install react-router-dom`
+2. Import BrowserRouter, Routes, and Route from react-router-dom
+3. Wrap your application in BrowserRouter
+4. Define your routes using Routes and Route
+5. Use Link to navigate between routes
+
+# What is react router and how to use it?
+## Answer
+React router is a library for routing in react applications. It allows you to navigate between different pages in your application without reloading the page.
+
+There are some main components of react router:-
+1. BrowserRouter
+2. Routes
+3. Route
+4. NavLink
+5. useParams
+6. useNavigate
+7. useLocation
+8. useHistory
+9. useMatch
+10. useResolvedPath
+11. useResolvedPath
+12. useResolvedPath
+13. useResolvedPath
+14. useResolvedPath
+15. useResolvedPath
+# How to use react router?
+## Answer
+1. Install react router: `npm install react-router-dom`
+2. Import BrowserRouter, Routes, and Route from react-router-dom
+3. Wrap your application in BrowserRouter
+4. Define your routes using Routes and Route
+5. Use Link to navigate between routes
+6. Use NavLink to navigate between routes
+7. Use useParams to get the parameters from the URL
+8. Use useNavigate to navigate to a different route
+9. Use useLocation to get the current location
+10. Use useHistory to navigate to a different route
+# How to create a router in react?
+## Answer
+1. Import createBrowserRouter from react-router-dom
+2. Create a router object with the routes 
+```const router = createBrowserRouter([
+    {
+        path: '/',
+        element: <Home />
+    },
+    {
+        path: '/about',
+        element: <About />
+    }])
+```
+
+
+
+3. Create a root element with the router 
+```const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<RouterProvider router={router} />);
+```
+
+# How to use isActive in react router?
+## Answer
+1. Import { useNavigate } from 'react-router-dom'
+2. Create a function to navigate to a different route
+```const navigate = useNavigate();
+navigate('/about');
+```
+3. Use isActive to check if the current route is active
+
+```
+<NavLink to='/about' className={({isActive})=>`${isActive?'text-black':'text-orange-700'} text-3xl  mt-16 `}>About</NavLink>
+```
+
+4. Use isActive to check if the current route is active
+```
+<NavLink to='/about' className={({isActive})=>`${isActive?'text-black':'text-orange-700'} text-3xl  mt-16 `}>About</NavLink>
+```
