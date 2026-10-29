@@ -3,7 +3,7 @@ export default function About(){
     return(
         <>
     
-    <div>This is About</div>
+    <div className="text-5xl ">This is About</div>
     </>
     )
 }

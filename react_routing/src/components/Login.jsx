@@ -3,7 +3,7 @@ export default function Login(){
     return(
 
         <>
-    <div>This is Login</div>
+    <div className="text-5xl ">This is Login</div>
     </>
     )
 }
