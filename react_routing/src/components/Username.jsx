@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-export default function User() {
+export default function Username() {
   const { id } = useParams();   // 👈 reads :id from the URL
   
 

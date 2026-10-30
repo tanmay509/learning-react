@@ -13,8 +13,10 @@ function App() {
   
   <div className='absolute top-0 right-100 flex gap-30 '>
    
+    <NavLink to='/home' className={({isActive})=>`${isActive?'text-black':'text-orange-700'} text-3xl  mt-16 `}>Home</NavLink>
     <NavLink to='/about' className={({isActive})=>`${isActive?'text-black':'text-orange-700'} text-3xl  mt-16 `}>About</NavLink>
     <NavLink to='/login' className={({isActive})=>`${isActive?'text-black':'text-orange-700'} text-3xl  mt-16 `}>Login</NavLink>
+    <NavLink to='/github' className={({isActive})=>`${isActive?'text-black':'text-orange-700'} text-3xl  mt-13 h-15 w-15`}><img src='https://cdn-icons-png.flaticon.com/128/1051/1051326.png' alt='github' /></NavLink>
   </div>
   
 </nav>
