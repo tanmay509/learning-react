@@ -1,0 +1,5 @@
+/* In your main CSS file (e.g., index.css) */
+@import "tailwindcss";
+
+/* This overrides the default OS-based dark mode to use a .dark class */
+@custom-variant dark (&:where(.dark, .dark *));
